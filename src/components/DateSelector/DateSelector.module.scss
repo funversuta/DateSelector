@@ -1,0 +1,57 @@
+.DateSelector {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  margin: 20% auto;
+  padding: 100px 60px 70px 23px;
+
+  @media screen and (max-width: 1435px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding-left: 45px;
+  }
+
+  &Buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-basis: 63px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 100px;
+    }
+  }
+
+  &Button {
+    padding: 0;
+    color: #0167b3;
+    background-color: transparent;
+    border: none;
+    opacity: 0.5;
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    line-height: 128%;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &Active {
+      opacity: 1;
+    }
+  }
+
+  &RangeContainer {
+    width: clamp(215px, 100%, 1270px);
+    margin-top: 15px;
+
+    @media screen and (max-width: 1435px) {
+      width: clamp(215px, 100%, 100%);
+    }
+  }
+}
