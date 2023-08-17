@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/slider-nst/static/css/main.e58c5518.css",
-    "main.js": "/slider-nst/static/js/main.5786b4b6.js",
-    "index.html": "/slider-nst/index.html",
-    "main.e58c5518.css.map": "/slider-nst/static/css/main.e58c5518.css.map",
-    "main.5786b4b6.js.map": "/slider-nst/static/js/main.5786b4b6.js.map"
+    "main.css": "/DateSelector/static/css/main.e58c5518.css",
+    "main.js": "/DateSelector/static/js/main.5786b4b6.js",
+    "index.html": "/DateSelector/index.html",
+    "main.e58c5518.css.map": "/DateSelector/static/css/main.e58c5518.css.map",
+    "main.5786b4b6.js.map": "/DateSelector/static/js/main.5786b4b6.js.map"
   },
   "entrypoints": [
     "static/css/main.e58c5518.css",
