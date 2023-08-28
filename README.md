@@ -1,5 +1,7 @@
 # На хостинге
 
+https://funversuta.github.io/DateSelector/
+
 ##### Установка зависимостей
 
 ```
