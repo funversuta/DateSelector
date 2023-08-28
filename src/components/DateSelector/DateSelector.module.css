@@ -14,18 +14,17 @@
     padding-left: 45px;
   }
 
-  &Buttons {
+  .DateSelectorButtons {
     display: flex;
     flex-direction: column;
     gap: 10px;
     flex-basis: 63px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1434px) {
       margin-bottom: 100px;
     }
   }
-
-  &Button {
+  .DateSelectorButton {
     padding: 0;
     color: #0167b3;
     background-color: transparent;
@@ -36,22 +35,23 @@
     line-height: 128%;
     font-weight: 600;
     cursor: pointer;
+    text-decoration: underline;
 
     &:hover {
       opacity: 0.7;
     }
-
-    &Active {
-      opacity: 1;
-    }
   }
+  .DateSelectorButtonActive {
+    opacity: 1;
+    text-decoration: none;
+  }
+}
 
-  &RangeContainer {
-    width: clamp(215px, 100%, 1270px);
-    margin-top: 15px;
+.DateSelectorRangeContainer {
+  width: clamp(215px, 100%, 1270px);
+  margin-top: 15px;
 
-    @media screen and (max-width: 1435px) {
-      width: clamp(215px, 100%, 100%);
-    }
+  @media screen and (max-width: 1435px) {
+    width: clamp(215px, 100%, 100%);
   }
 }

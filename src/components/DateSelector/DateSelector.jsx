@@ -1,46 +1,33 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import CustomNouislider from "../NoUiSlider/NoUiSlider";
-import styles from "./DateSelector.module.scss";
+import styles from "./DateSelector.module.css";
 
-let minValue = "2014";
-let maxValue = "2021";
-const defaultMinValue = "2015, 5";
-const defaultMaxValue = "2016, 2";
+const minValue = new Date(2015, 1, 0);
+const maxValue = new Date(2017, 0, 1);
+const defaultMinValue = new Date(2015, 6, 0);
+const defaultMaxValue = new Date(2016, 2, 1);
 
 const DateSelector = () => {
-  const [YearBtn, setYearBtn] = useState(true);
-  const [MonthBtn, setMonthBtn] = useState(false);
+  const [yearBtn, setYearBtn] = useState(true);
 
   const handleYearsClick = () => {
     setYearBtn(true);
-    setMonthBtn(false);
   };
 
   const handleMonthsClick = () => {
-    setMonthBtn(true);
     setYearBtn(false);
   };
 
-  const getDatepoints = (str) => {
+  const getDatePoints = (str) => {
     return new Date(str).getTime();
   };
-
-  useEffect(() => {
-    if (YearBtn) {
-      minValue = "2015";
-      maxValue = "2017";
-    } else {
-      minValue = "2014";
-      maxValue = "2021";
-    }
-  }, [YearBtn]);
 
   return (
     <div className={styles.DateSelector}>
       <div className={styles.DateSelectorButtons}>
         <button
           className={`${styles.DateSelectorButton} ${
-            YearBtn ? styles.DateSelectorButtonActive : ""
+            yearBtn ? styles.DateSelectorButtonActive : ""
           } `}
           onClick={handleYearsClick}
         >
@@ -48,7 +35,7 @@ const DateSelector = () => {
         </button>
         <button
           className={`${styles.DateSelectorButton} ${
-            MonthBtn ? styles.DateSelectorButtonActive : ""
+            !yearBtn ? styles.DateSelectorButtonActive : ""
           } `}
           onClick={handleMonthsClick}
         >
@@ -57,11 +44,11 @@ const DateSelector = () => {
       </div>
       <div className={styles.DateSelectorRangeContainer}>
         <CustomNouislider
-          isYearBtn={YearBtn}
-          minValue={getDatepoints(minValue)}
-          maxValue={getDatepoints(maxValue)}
-          defaultMin={getDatepoints(defaultMinValue)}
-          defaultMax={getDatepoints(defaultMaxValue)}
+          isYearBtn={yearBtn}
+          minValue={getDatePoints(minValue)}
+          maxValue={getDatePoints(maxValue)}
+          defaultMin={getDatePoints(defaultMinValue)}
+          defaultMax={getDatePoints(defaultMaxValue)}
         />
       </div>
     </div>
